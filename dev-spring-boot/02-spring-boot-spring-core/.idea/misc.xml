@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/06-primary/pom.xml" />
+        <option value="$PROJECT_DIR$/05-qualifiers/pom.xml" />
+        <option value="$PROJECT_DIR$/08-bean-scopes/pom.xml" />
+        <option value="$PROJECT_DIR$/04-field-injection/pom.xml" />
+        <option value="$PROJECT_DIR$/03-setter-injection/pom.xml" />
+        <option value="$PROJECT_DIR$/10-java-config-bean/pom.xml" />
+        <option value="$PROJECT_DIR$/02-component-scanning/pom.xml" />
+        <option value="$PROJECT_DIR$/07-lazy-initialization/pom.xml" />
+        <option value="$PROJECT_DIR$/01-constructor-injection/pom.xml" />
+        <option value="$PROJECT_DIR$/09-bean-lifecycle-methods/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="21" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
