@@ -24,8 +24,8 @@ public class Student {
     private String email;
 
     @ManyToMany(fetch=FetchType.LAZY,
-            cascade={CascadeType.DETACH, CascadeType.MERGE,
-                     CascadeType.PERSIST, CascadeType.REFRESH},
+            cascade={CascadeType.PERSIST, CascadeType.MERGE,
+                    CascadeType.DETACH, CascadeType.REFRESH},
             mappedBy="students")
     private List<Course> courses;
 
@@ -85,6 +85,7 @@ public class Student {
         }
 
         courses.add(theCourse);
+        theCourse.addStudent(this);
     }
 
     @Override

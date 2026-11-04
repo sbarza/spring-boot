@@ -37,8 +37,8 @@ public class Course {
     private List<Review> reviews;
 
     @ManyToMany(fetch=FetchType.LAZY,
-            cascade={CascadeType.PERSIST, CascadeType.DETACH,
-                     CascadeType.REFRESH, CascadeType.MERGE})
+            cascade={CascadeType.PERSIST, CascadeType.MERGE,
+                    CascadeType.DETACH, CascadeType.REFRESH})
     @JoinTable(
             name="course_student",
             joinColumns=@JoinColumn(name="course_id"),
