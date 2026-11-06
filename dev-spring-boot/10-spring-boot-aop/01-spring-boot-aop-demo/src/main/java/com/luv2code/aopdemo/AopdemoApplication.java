@@ -28,9 +28,11 @@ public class AopdemoApplication {
         // Call the business method
         Account myAccount = new Account();
         theAccountDAO.addAccount(myAccount, true);
+        theAccountDAO.doWork();
 
         // Call the membership business method
         theMembershipDAO.addSillyMember();
+        theMembershipDAO.goToSleep();
 
     }
 
