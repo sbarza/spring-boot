@@ -8,4 +8,12 @@ public interface AccountDAO {
 
     boolean doWork();
 
+    String getName();
+
+    void  setName(String name);
+
+    String getServiceCode();
+
+    void setServiceCode(String serviceCode);
+
 }
