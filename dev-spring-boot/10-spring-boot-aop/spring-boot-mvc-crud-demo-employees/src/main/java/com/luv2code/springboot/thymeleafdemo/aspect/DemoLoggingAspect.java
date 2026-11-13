@@ -5,6 +5,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
+import org.springframework.validation.ObjectError;
 
 import java.util.logging.Logger;
 
@@ -38,6 +39,14 @@ public class DemoLoggingAspect {
         myLogger.info("=====>> in @Before: calling method: " + theMethod);
 
         // Display the arguments to the method
+
+        // Get the arguments
+        Object[] args = theJoinPoint.getArgs();
+
+        // Loop through and display arguments
+        for (Object tempArg : args) {
+            myLogger.info("=====>> argument: " + tempArg);
+        }
     }
 
 }
