@@ -1,6 +1,8 @@
 package com.luv2code.springboot.thymeleafdemo.aspect;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
@@ -14,17 +16,28 @@ public class DemoLoggingAspect {
     private Logger myLogger = Logger.getLogger(getClass().getName());
 
     // Setup pointcut declarations
-    @Pointcut("execte(* com.luv2code.springboot.thymeleafdemo.controller.*.*(..))")
+    @Pointcut("execution(* com.luv2code.springboot.thymeleafdemo.controller.*.*(..))")
     public void forControllerPackage() {}
 
     // Do the same for service and dao
-    @Pointcut("execte(* com.luv2code.springboot.thymeleafdemo.service.*.*(..))")
+    @Pointcut("execution(* com.luv2code.springboot.thymeleafdemo.service.*.*(..))")
     public void forServicePackage() {}
 
-    @Pointcut("execte(* com.luv2code.springboot.thymeleafdemo.dao.*.*(..))")
+    @Pointcut("execution(* com.luv2code.springboot.thymeleafdemo.dao.*.*(..))")
     public void forDaoPackage() {}
 
     @Pointcut("forControllerPackage() || forServicePackage() || forDaoPackage()")
     public void forAppFlow() {}
+
+    // Add @Before Advice
+    @Before("forAppFlow()")
+    public void before(JoinPoint theJoinPoint) {
+
+        // Display method we are calling
+        String theMethod = theJoinPoint.getSignature().toShortString();
+        myLogger.info("=====>> in @Before: calling method: " + theMethod);
+
+        // Display the arguments to the method
+    }
 
 }
